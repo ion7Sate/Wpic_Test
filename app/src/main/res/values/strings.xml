@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Wpic_Test</string>
+    <string name="add_button_pressed">Add Button is Pressed</string>
+    <string name="settings_button_pressed">Settings Button is Pressed</string>
+    <string name="add_button_description">Add Button</string>
+    <string name="settings_button_description">Settings Button</string>
+    <string name="single_frames_button_text">Single Frames</string>
+    <string name="double_frames_button_text">Double Frames</string>
+    <string name="triple_frames_button_text">Triple Frames</string>
+    <string name="collage_button_text">Collage</string>
+    <string name="photo_edit_button_text">Photo Edit</string>
+    <string name="add_text_button_text">Add text</string>
+    <string name="popular_frame_text">Popular Frame</string>
+
+</resources>
