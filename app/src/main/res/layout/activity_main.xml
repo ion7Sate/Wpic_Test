@@ -2,10 +2,54 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/status_bar"
+        android:layout_width="match_parent"
+        android:layout_height="26dp"
+        android:background="@color/colorStatusBar">
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/gsm_status_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_mobile_signal"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="8dp"/>
+
+        <ImageView
+            android:id="@+id/wifi_status_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_wifi_signal"
+            android:layout_toLeftOf="@id/gsm_status_icon"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="8dp"/>
+
+        <ImageView
+            android:id="@+id/battery_status_key"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_battery_level"
+            android:layout_toLeftOf="@id/wifi_status_icon"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="8dp"/>
+    </RelativeLayout>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@id/status_bar">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -17,7 +61,6 @@
                 android:id="@+id/buttons_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="47dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
@@ -234,7 +277,6 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
                     android:fontFamily="sans-serif"
-                    android:lineHeight="28.13sp"
                     android:text="@string/popular_frame_text"
                     android:textAlignment="textStart"
                     android:textColor="#000000"
@@ -256,7 +298,8 @@
 
                         <FrameLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp">
 
                             <ImageView
                                 android:layout_width="match_parent"
@@ -282,11 +325,13 @@
                             android:layout_height="wrap_content"
                             android:adjustViewBounds="true"
                             android:scaleType="fitXY"
-                            android:src="@drawable/image_1_2" />
+                            android:src="@drawable/image_1_2"
+                            android:layout_marginBottom="8dp"/>
 
                         <FrameLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp">
 
                             <ImageView
                                 android:layout_width="match_parent"
@@ -311,9 +356,14 @@
                             android:layout_height="wrap_content"
                             android:adjustViewBounds="true"
                             android:scaleType="fitXY"
-                            android:src="@drawable/image_1_4" />
+                            android:src="@drawable/image_1_4"
+                            android:layout_marginBottom="8dp"/>
 
                     </LinearLayout>
+
+                    <Space
+                        android:layout_width="8dp"
+                        android:layout_height="match_parent"/>
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -326,11 +376,13 @@
                             android:layout_height="wrap_content"
                             android:adjustViewBounds="true"
                             android:scaleType="fitXY"
-                            android:src="@drawable/image_2_1" />
+                            android:src="@drawable/image_2_1"
+                            android:layout_marginBottom="8dp"/>
 
                         <FrameLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp">
 
                             <ImageView
                                 android:layout_width="match_parent"
@@ -356,11 +408,13 @@
                             android:layout_height="wrap_content"
                             android:adjustViewBounds="true"
                             android:scaleType="fitXY"
-                            android:src="@drawable/image_2_3" />
+                            android:src="@drawable/image_2_3"
+                            android:layout_marginBottom="8dp"/>
 
                         <FrameLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp">
 
                             <ImageView
                                 android:layout_width="match_parent"
