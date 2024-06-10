@@ -10,13 +10,19 @@ import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
+
+    ArrayList<Frame> frames = new ArrayList<Frame>();
+    private RecyclerView.LayoutManager layoutManager;
     private TextView timeTextView;
     private Handler handler = new Handler(Looper.getMainLooper());
     private SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm", Locale.getDefault());
@@ -32,9 +38,20 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+
+        setInitialData();
+        RecyclerView recyclerView = findViewById(R.id.frame);
+        layoutManager = new GridLayoutManager(this, 3);
+        recyclerView.setLayoutManager(layoutManager);
+        FrameAdapter adapter = new FrameAdapter(this, frames);
+        recyclerView.setAdapter(adapter);
+
+
 
         timeTextView = findViewById(R.id.tv_time);
         handler.post(updateTimeTask);
@@ -53,6 +70,19 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    private void setInitialData(){
+
+        frames.add(new Frame (R.drawable.ic_single_frames,"Single Frames"));
+        frames.add(new Frame (R.drawable.ic_double_frames,"Double Frames"));
+        frames.add(new Frame (R.drawable.ic_triple_frames,"Triple Frames"));
+        frames.add(new Frame (R.drawable.ic_collage,"Collage"));
+        frames.add(new Frame (R.drawable.ic_photo_edit,"Photo Edit"));
+        frames.add(new Frame (R.drawable.ic_add_text,"Add Text"));
+
+    }
+
+
 
 
 }

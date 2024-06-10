@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <RelativeLayout
         android:id="@+id/status_bar"
         android:layout_width="match_parent"
@@ -93,177 +94,13 @@
 
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/text_message"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/buttons_layout"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="16dp"
-                android:text=""
-                android:textSize="18sp"
-                android:visibility="gone" />
 
-
-            <GridLayout
-                android:id="@+id/grid_layout"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/frame"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/buttons_layout"
-                android:layout_marginTop="16dp"
-                android:columnCount="3"
-                android:orientation="horizontal"
-                android:padding="8dp"
-                android:rowCount="2">
-
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="108dp"
-                        android:layout_height="127dp"
-                        android:src="@drawable/ic_single_frames"
-                        android:visibility="visible" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="sans-serif-medium"
-                        android:text="@string/single_frames_button_text"
-                        android:textAlignment="viewStart"
-                        android:textColor="#232323"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="108dp"
-                        android:layout_height="125dp"
-                        android:src="@drawable/ic_double_frames"
-                        android:visibility="visible" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="sans-serif-medium"
-                        android:text="@string/double_frames_button_text"
-                        android:textAlignment="viewStart"
-                        android:textColor="#232323"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="125dp"
-                        android:src="@drawable/ic_triple_frames"
-                        android:visibility="visible" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="sans-serif-medium"
-                        android:text="@string/triple_frames_button_text"
-                        android:textAlignment="viewStart"
-                        android:textColor="#232323"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="125dp"
-                        android:src="@drawable/ic_collage"
-                        android:visibility="visible" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="sans-serif-medium"
-                        android:text="@string/collage_button_text"
-                        android:textAlignment="viewStart"
-                        android:textColor="#232323"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="125dp"
-                        android:src="@drawable/ic_photo_edit"
-                        android:visibility="visible" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="sans-serif-medium"
-                        android:text="@string/photo_edit_button_text"
-                        android:textAlignment="viewStart"
-                        android:textColor="#232323"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="125dp"
-                        android:src="@drawable/ic_add_text"
-                        android:visibility="visible" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="sans-serif-medium"
-                        android:text="@string/add_text_button_text"
-                        android:textAlignment="viewStart"
-                        android:textColor="#232323"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-            </GridLayout>
+                android:layout_height="match_parent"
+                android:layout_margin="16dp"
+                android:scrollbars="vertical" />
 
             <LinearLayout
                 android:layout_width="match_parent"
