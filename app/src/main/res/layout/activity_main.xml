@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
+
     <RelativeLayout
         android:id="@+id/status_bar"
         android:layout_width="match_parent"
@@ -26,7 +26,7 @@
             android:src="@drawable/ic_mobile_signal"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="8dp"/>
+            android:layout_marginRight="8dp" />
 
         <ImageView
             android:id="@+id/wifi_status_icon"
@@ -35,7 +35,7 @@
             android:src="@drawable/ic_wifi_signal"
             android:layout_toLeftOf="@id/gsm_status_icon"
             android:layout_centerVertical="true"
-            android:layout_marginRight="8dp"/>
+            android:layout_marginRight="8dp" />
 
         <ImageView
             android:id="@+id/battery_status_key"
@@ -44,7 +44,7 @@
             android:src="@drawable/ic_battery_level"
             android:layout_toLeftOf="@id/wifi_status_icon"
             android:layout_centerVertical="true"
-            android:layout_marginRight="8dp"/>
+            android:layout_marginRight="8dp" />
     </RelativeLayout>
 
     <ScrollView
@@ -55,8 +55,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
+            android:orientation="vertical"
+            android:padding="8dp">
 
             <LinearLayout
                 android:id="@+id/buttons_layout"
@@ -91,201 +91,35 @@
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:contentDescription="@string/settings_button_description"
                     android:src="@drawable/ic_settings_button" />
-
             </LinearLayout>
-
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/frame"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="16dp"
+                android:layout_height="wrap_content"
                 android:scrollbars="vertical" />
 
-            <LinearLayout
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="sans-serif"
+                android:text="@string/popular_frame_text"
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/popularFrameView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="2dp"
+                android:scrollbars="vertical" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:fontFamily="sans-serif"
-                    android:text="@string/popular_frame_text"
-                    android:textAlignment="textStart"
-                    android:textColor="#000000"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-
-                        <FrameLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp">
-
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:adjustViewBounds="true"
-                                android:scaleType="fitXY"
-                                android:src="@drawable/image_1_1" />
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="top|end"
-                                android:layout_marginStart="96dp"
-                                android:layout_marginTop="8dp"
-                                android:src="@drawable/ic_premium"
-                                android:visibility="visible" />
-
-                        </FrameLayout>
-
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:adjustViewBounds="true"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/image_1_2"
-                            android:layout_marginBottom="8dp"/>
-
-                        <FrameLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp">
-
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:adjustViewBounds="true"
-                                android:scaleType="fitXY"
-                                android:src="@drawable/image_1_3" />
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="top|end"
-                                android:layout_marginStart="96dp"
-                                android:layout_marginTop="8dp"
-                                android:src="@drawable/ic_premium"
-                                android:visibility="visible" />
-
-                        </FrameLayout>
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:adjustViewBounds="true"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/image_1_4"
-                            android:layout_marginBottom="8dp"/>
-
-                    </LinearLayout>
-
-                    <Space
-                        android:layout_width="8dp"
-                        android:layout_height="match_parent"/>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:adjustViewBounds="true"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/image_2_1"
-                            android:layout_marginBottom="8dp"/>
-
-                        <FrameLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp">
-
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:adjustViewBounds="true"
-                                android:scaleType="fitXY"
-                                android:src="@drawable/image_2_2" />
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="top|end"
-                                android:layout_marginStart="96dp"
-                                android:layout_marginTop="8dp"
-                                android:src="@drawable/ic_premium"
-                                android:visibility="visible" />
-
-                        </FrameLayout>
-
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:adjustViewBounds="true"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/image_2_3"
-                            android:layout_marginBottom="8dp"/>
-
-                        <FrameLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp">
-
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:adjustViewBounds="true"
-                                android:scaleType="fitXY"
-                                android:src="@drawable/image_2_4" />
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="top|end"
-                                android:layout_marginStart="96dp"
-                                android:layout_marginTop="8dp"
-                                android:src="@drawable/ic_premium"
-                                android:visibility="visible" />
-
-                        </FrameLayout>
-
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/image_full" />
-
-            </LinearLayout>
         </LinearLayout>
-
     </ScrollView>
-
 </RelativeLayout>

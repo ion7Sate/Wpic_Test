@@ -12,6 +12,7 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     ArrayList<Frame> frames = new ArrayList<Frame>();
+    ArrayList<PopularFrame> popularFrames = new ArrayList<PopularFrame>();
     private RecyclerView.LayoutManager layoutManager;
     private TextView timeTextView;
     private Handler handler = new Handler(Looper.getMainLooper());
@@ -45,11 +47,24 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         setInitialData();
+
+
         RecyclerView recyclerView = findViewById(R.id.frame);
         layoutManager = new GridLayoutManager(this, 3);
         recyclerView.setLayoutManager(layoutManager);
         FrameAdapter adapter = new FrameAdapter(this, frames);
         recyclerView.setAdapter(adapter);
+
+
+
+        recyclerView = findViewById(R.id.popularFrameView);
+        int numberOfColumns = 2;
+
+        CustomStaggeredGridLayoutManager layoutManager = new CustomStaggeredGridLayoutManager(numberOfColumns, StaggeredGridLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(layoutManager);
+        PopularFrameAdapter popularAdapter = new PopularFrameAdapter(this, popularFrames);
+        recyclerView.setAdapter(popularAdapter);
+
 
 
 
@@ -79,6 +94,25 @@ public class MainActivity extends AppCompatActivity {
         frames.add(new Frame (R.drawable.ic_collage,"Collage"));
         frames.add(new Frame (R.drawable.ic_photo_edit,"Photo Edit"));
         frames.add(new Frame (R.drawable.ic_add_text,"Add Text"));
+
+        popularFrames.add(new PopularFrame(R.drawable.image_1_1));
+        popularFrames.add(new PopularFrame(R.drawable.image_2_1));
+        popularFrames.add(new PopularFrame(R.drawable.image_2_2));
+        popularFrames.add(new PopularFrame(R.drawable.image_1_2));
+
+
+
+        popularFrames.add(new PopularFrame(R.drawable.image_1_3));
+        popularFrames.add(new PopularFrame(R.drawable.image_2_3));
+        popularFrames.add(new PopularFrame(R.drawable.image_2_4));
+        popularFrames.add(new PopularFrame(R.drawable.image_1_4));
+
+        popularFrames.add(new PopularFrame(R.drawable.image_full));
+
+
+
+
+
 
     }
 
